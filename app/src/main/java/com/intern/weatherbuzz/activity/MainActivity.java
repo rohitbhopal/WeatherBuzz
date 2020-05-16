@@ -1,3 +1,5 @@
+package com.intern.weatherbuzz.activity;
+
 itpackage com.intern.weatherbuzz;
 
 import androidx.appcompat.app.AppCompatActivity;
