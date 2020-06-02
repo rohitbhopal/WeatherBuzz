@@ -53,8 +53,9 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.intern.weatherbuzz.R;
 
-public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener,SearchView.OnQueryTextListener,OnClickListener {
+public class MainActivity extends Activity  {
 
     private HashMap<String,ArrayList<String>> countrytoCity =new HashMap<>();
 
@@ -64,7 +65,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     String cityW="";
     // Declare Variables
     ListView list;
-    ListViewAdapter adapter;
+   // ListViewAdapter adapter;
     SearchView editsearch;
 
     TextView emptyView,address,updated_at,status,temp,temp_min,temp_max,sunrise,sunset,humidity,wind,pressure;
@@ -80,7 +81,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         progressDoalog.setMessage("Loading....");
         progressDoalog.show();
 
-        populateAdapter();
+        //populateAdapter();
         getLatLon();
         getWeatherInfo("Montreal");
 
@@ -120,13 +121,13 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         address = (TextView) findViewById(R.id.address);
 
 
-        editsearch = (SearchView) findViewById(R.id.search);
-        editsearch.setOnQueryTextListener(this);
+        //editsearch = (SearchView) findViewById(R.id.search);
+       // editsearch.setOnQueryTextListener(this);
 
     }
 
 
-    public void populateAdapter () {
+   /* public void populateAdapter () {
         city=getArrayList("cityList");
         list = (ListView) findViewById(R.id.listview);
         list.setVisibility(View.INVISIBLE);
@@ -136,7 +137,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         // Binds the Adapter to the ListView
         list.setAdapter(adapter);
 
-    }
+    }*/
 
 
 
@@ -234,7 +235,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     MenuItem  searchMenuItem;
 
 
-    @Override
+  /*  @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
         String item = parent.getItemAtPosition(position).toString();
@@ -261,19 +262,12 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         return false;
     }
 
-    private void handelListItemClick(String city) {
-        // close search view if its visible
-        if (searchView.isShown()) {
-            searchMenuItem.collapseActionView();
-            searchView.setQuery("", false);
-        }
-        getWeatherInfo(city);
-    }
+
 
     @Override
     public void onItemClick(String city){
         getWeatherInfo(city);
         list.setVisibility(View.INVISIBLE);
-    }
+    }*/
 
 }
