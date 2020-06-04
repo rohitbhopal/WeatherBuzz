@@ -6,19 +6,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/appColor">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        app:actionViewClass="android.support.v7.widget.SearchView"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+        android:iconifiedByDefault="false">
+        <requestFocus />
+    </androidx.appcompat.widget.SearchView>
 
 
     <LinearLayout
         android:id="@+id/mainContainer"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -266,5 +265,11 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/search" />
 
 </RelativeLayout>
